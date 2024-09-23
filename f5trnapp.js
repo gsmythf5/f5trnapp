@@ -9,7 +9,6 @@ const myostype = os.type();
 const myoscpus = os.cpus();
 const myoshomedir = os.homedir();
 const myoshostname = os.hostname();
-const myosmachine = os.machine();
 const myosnetworkInterfaces = os.networkInterfaces();
 const myimg1 = fs.readFileSync('./f5logo.png');
 const mydnsservers = mydns.getServers();
@@ -43,7 +42,6 @@ const mywebserver = myhttp.createServer((req, res) => {
         res.write("<h4>Type: " + `${myostype}` + "</h4>");
         res.write("<h4>Home Directory: " + `${myoshomedir}` + "</h4>");
         res.write("<h4>Hostname: " + `${myoshostname}` + "</h4>");
-        res.write("<h4>Machine: " + `${myosmachine}` + "</h4>");
         res.write("<h4>Networks: " + `${myosnetworkInterfaces}` + "</h4>");
         res.write("<h4>DNS Servers : " + `${mydnsservers}` + "</h4>");
         res.write('</html>');
@@ -60,6 +58,6 @@ const mywebserver = myhttp.createServer((req, res) => {
     }
 })
 
-mywebserver.listen(3000, () => {
-        console.log('F5 Training Application listening on port 3000');
+mywebserver.listen(3005, () => {
+        console.log('F5 Training Application listening on port 3005');
 })
